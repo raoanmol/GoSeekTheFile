@@ -1,14 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8">
+        <meta charset="UTF-8" />
         <title>GoSeekTheFile</title>
+        <link id="theme-style" rel="stylesheet" href="css/light.css" />
     </head>
     <body>
+        <div class="theme-switch-wrapper">
+            <label class="theme-switch" for="checkbox">
+                <input type="checkbox" id="checkbox" />
+                <div class="slider round"></div>
+            </label>
+            <em>Switch to Dark Mode!</em>
+        </div>
         <h1>GoSeekTheFile</h1>
 
         <form id="search-form">
-            <input id="search-input" type="text" placeholder="Enter your phrase...">
+            <input id="search-input" type="text" placeholder="Enter the file name...">
             <button type="submit">Search</button>
         </form>
 

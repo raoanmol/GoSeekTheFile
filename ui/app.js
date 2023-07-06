@@ -24,3 +24,12 @@ document.getElementById('search-form').addEventListener('submit', function(e) {
             });
         });
 });
+
+let themeCheckbox = document.querySelector('input[type="checkbox"]');
+themeCheckbox.addEventListener('change', function (event) {
+    if (event.target.checked) {
+        document.getElementById('theme-style').href = './dark.css';
+    } else {
+        document.getElementById('theme-style').href = './light.css';
+    }
+});
