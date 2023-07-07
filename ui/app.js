@@ -17,11 +17,25 @@ document.getElementById('search-form').addEventListener('submit', function(e) {
         .then(function(data) {
             resultsElement.innerHTML = '';
 
-            data.files.forEach(function(file) {
+            if (data.files.length > 0) {
+                data.files.forEach(function(file) {
+                    var li = document.createElement('li');
+                    li.textContent = file;
+                    resultsElement.appendChild(li);
+                });
+            } else {
                 var li = document.createElement('li');
-                li.textContent = file;
+                li.textContent = 'File not found :/';
+                var currentTheme = document.getElementById('theme-style').href;
+
+                if (currentTheme.includes('dark.css')) {
+                    li.style.color = '#e64553';
+                } else {
+                    li.style.color = '#d20f39';
+                }
+                
                 resultsElement.appendChild(li);
-            });
+            }
         });
 });
 
